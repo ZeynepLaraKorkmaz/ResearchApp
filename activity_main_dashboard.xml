@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/addPaperButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Paper" />
+
+    <!-- Yeni Delete Button eklendi -->
+    <Button
+        android:id="@+id/deletePaperButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Selected Paper"
+        android:enabled="false" />  <!-- Başta seçili olmadığı için pasif -->
+
+    <ListView
+        android:id="@+id/paperListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/gotoCitation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Citation Manager" />
+
+    <Button
+        android:id="@+id/gotoReference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reference Library" />
+
+    <Button
+        android:id="@+id/gotoSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings" />
+
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.researchapp">
+
+    <!-- İzinler -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- WRITE_EXTERNAL_STORAGE sadece Android 9 (API 28) ve öncesi için -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ResearchApp"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <!-- FileProvider tanımı PDF paylaşımı için -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.researchapp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Aktiviteler -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MainDashboardActivity" />
+        <activity android:name=".PaperEditorActivity" />
+        <activity android:name=".CitationManagerActivity" />
+        <activity android:name=".ReferenceLibraryActivity" />
+        <activity android:name=".SettingsActivity" />
+
+    </application>
+
+</manifest>
